@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ade-azuredf-dev"
+		},
+		"ls_azuresql_server_password": {
+			"value": ""
+		},
+		"ls_source_adls_accountKey": {
+			"value": ""
+		},
+		"ls_target_sql_password": {
+			"value": ""
+		},
+		"ls_azuresql_server_properties_typeProperties_server": {
+			"value": "sqlserverazurededev.database.windows.net"
+		},
+		"ls_azuresql_server_properties_typeProperties_database": {
+			"value": "sqldbadedev"
+		},
+		"ls_azuresql_server_properties_typeProperties_userName": {
+			"value": "sqldatabase"
+		},
+		"ls_source_adls_properties_typeProperties_url": {
+			"value": "https://adlsgen2newadls.dfs.core.windows.net"
+		},
+		"ls_target_sql_properties_typeProperties_server": {
+			"value": "sqlserverazurededev.database.windows.net"
+		},
+		"ls_target_sql_properties_typeProperties_database": {
+			"value": "sqldbadetargetdev"
+		},
+		"ls_target_sql_properties_typeProperties_userName": {
+			"value": "sqldatabase"
+		}
+	}
+}
