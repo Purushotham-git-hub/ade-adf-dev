@@ -1,0 +1,21 @@
+{
+	"name": "ade-azuredf-dev",
+	"properties": {
+		"globalParameters": {
+			"container": {
+				"type": "string",
+				"value": "adgen2container"
+			},
+			"TargetFilePath": {
+				"type": "string",
+				"value": "target"
+			}
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d144d02c-794b-4107-9f48-fa5471b457e1",
+		"tenantId": "8618c8f3-f73f-4cfa-baf5-9c54be1634f9"
+	}
+}
