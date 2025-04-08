@@ -1,0 +1,17 @@
+{
+	"name": "ls_connect_sql_using_keyvault_screatename",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sqlkeyvaultvalue"
+			}
+		}
+	}
+}
