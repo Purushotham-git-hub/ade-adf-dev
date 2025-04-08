@@ -14,6 +14,9 @@
 		"ls_target_sql_password": {
 			"value": ""
 		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://ade-keyvaault-dev.vault.azure.net/"
+		},
 		"ls_azuresql_server_properties_typeProperties_server": {
 			"value": "sqlserverazurededev.database.windows.net"
 		},
@@ -22,6 +25,9 @@
 		},
 		"ls_azuresql_server_properties_typeProperties_userName": {
 			"value": "sqldatabase"
+		},
+		"ls_connect_sql_using_keyvault_screatename_properties_typeProperties_connectionString_secretName": {
+			"value": "sqlkeyvaultvalue"
 		},
 		"ls_source_adls_properties_typeProperties_url": {
 			"value": "https://adlsgen2newadls.dfs.core.windows.net"

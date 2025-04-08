@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'ls_target_sql'"
 		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ade-keyvaault-dev.vault.azure.net/"
+		},
 		"ls_azuresql_server_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "sqlserverazurededev.database.windows.net"
@@ -30,6 +34,10 @@
 		"ls_azuresql_server_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "sqldatabase"
+		},
+		"ls_connect_sql_using_keyvault_screatename_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "sqlkeyvaultvalue"
 		},
 		"ls_source_adls_properties_typeProperties_url": {
 			"type": "string",
@@ -82,6 +90,9 @@
 					},
 					"ls_target_sql_password": {
 						"value": "[parameters('ls_target_sql_password')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
 					},
 					"ls_azuresql_server_properties_typeProperties_server": {
 						"value": "[parameters('ls_azuresql_server_properties_typeProperties_server')]"
@@ -141,6 +152,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"ls_connect_sql_using_keyvault_screatename_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('ls_connect_sql_using_keyvault_screatename_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
@@ -166,6 +180,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'ade-azuredf-dev_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "ade-azuredf-dev_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ade-azuredf-dev_ArmTemplate_3')]"
 			]
 		}
 	]
